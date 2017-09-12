@@ -30,13 +30,12 @@
                     android:text="dwerwerf\ndf\ndf\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\\n\ndfdfgdfg" />
             </ScrollView>
 
-            <Button
+            <ImageView
                 android:id="@+id/btnGG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GooGle"
-                tools:layout_editor_absoluteY="422dp"
-                tools:layout_editor_absoluteX="250dp" />
+                android:src="@drawable/fanster_round_logo"
+                android:visibility="gone"/>
 
         </RelativeLayout>
 

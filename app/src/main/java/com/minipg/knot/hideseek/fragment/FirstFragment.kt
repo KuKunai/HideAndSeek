@@ -19,39 +19,51 @@ import java.util.*
  */
 class FirstFragment() : Fragment() {
 
+    var clicked = false
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_one, container, false)
 
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initinstance()
     }
 
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+    }
+
+
     private fun initinstance() {
         var r = Random()
-        var metric = DisplayMetrics()
-        activity.windowManager.defaultDisplay.getMetrics(metric)
-        btnGG.text = "go"
+
+        btnGG.setOnClickListener({
+            btnGG.visibility = View.GONE
+            clicked = true
+        })
 
         svOutside.viewTreeObserver.addOnGlobalLayoutListener {
-            if(svOutside!=null && btnGG!=null){
+            if (svOutside != null && btnGG != null && !clicked) {
+                val width = svOutside.width - btnGG.width
                 val height = svOutside.getChildAt(0).height - btnGG.height
-                val width = svOutside.width-btnGG.width
                 val x = r.nextInt(width).toFloat()
-                Log.d("ggg","X = $x")
                 val y = r.nextInt(height).toFloat()
-                Log.d("ggg","Y = $y")
-                Log.d("ggg",height.toString())
-                Log.d("ggg",width.toString())
+                Log.d("ggg", height.toString())
+                Log.d("ggg", width.toString())
                 btnGG.x = x
                 btnGG.y = y
+                btnGG.visibility = View.VISIBLE
+
             }
 
         }
-
-
 
     }
 }

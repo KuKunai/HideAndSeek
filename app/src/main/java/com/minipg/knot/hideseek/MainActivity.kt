@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toolbar.title = "Hello"
+        toolbar.title = "Hide & Seek"
         setSupportActionBar(toolbar)
         mSectionPageAdapter = PageAdapter(supportFragmentManager,this)
         container.adapter = mSectionPageAdapter
@@ -24,9 +24,6 @@ class MainActivity : AppCompatActivity() {
         tabs.getTabAt(0)?.text = "First"
         tabs.getTabAt(1)?.text = "Second"
         tabs.getTabAt(2)?.text = "Third"
-//
-//        supportFragmentManager.beginTransaction()
-//                .replace(R.id.container,firstFragment)
-//                .commit()
+
     }
 }

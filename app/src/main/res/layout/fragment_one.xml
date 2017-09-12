@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llOutside"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCDD2">
+    android:background="#FFCDD2"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/svOutside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rlContrainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/svInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dwerwerf\ndf\ndf\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\\n\ndfdfgdfg" />
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btnGG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GooGle"
+                tools:layout_editor_absoluteY="422dp"
+                tools:layout_editor_absoluteX="250dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

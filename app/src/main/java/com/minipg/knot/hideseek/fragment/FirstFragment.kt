@@ -34,17 +34,21 @@ class FirstFragment() : Fragment() {
         var metric = DisplayMetrics()
         activity.windowManager.defaultDisplay.getMetrics(metric)
         btnGG.text = "go"
+
         svOutside.viewTreeObserver.addOnGlobalLayoutListener {
-            val height = svOutside.getChildAt(0).height-btnGG.height
-            val x = r.nextInt(height).toFloat()
-            Log.d("ggg","X = $x")
-            val width = svOutside.width-btnGG.width
-            val y = r.nextInt(width).toFloat()
-            Log.d("ggg","Y = $y")
-            Log.d("ggg",height.toString())
-            Log.d("ggg",width.toString())
-            btnGG.x = x
-            btnGG.y = y
+            if(svOutside!=null && btnGG!=null){
+                val height = svOutside.getChildAt(0).height - btnGG.height
+                val width = svOutside.width-btnGG.width
+                val x = r.nextInt(width).toFloat()
+                Log.d("ggg","X = $x")
+                val y = r.nextInt(height).toFloat()
+                Log.d("ggg","Y = $y")
+                Log.d("ggg",height.toString())
+                Log.d("ggg",width.toString())
+                btnGG.x = x
+                btnGG.y = y
+            }
+
         }
 
 

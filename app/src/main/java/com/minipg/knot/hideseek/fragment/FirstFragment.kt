@@ -19,7 +19,10 @@ import java.util.*
  */
 class FirstFragment() : Fragment() {
 
-    var clicked = false
+    private var clicked = false
+    private var created = false
+    private var x = 0F
+    private var y = 0F
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_one, container, false)
@@ -53,14 +56,16 @@ class FirstFragment() : Fragment() {
             if (svOutside != null && btnGG != null && !clicked) {
                 val width = svOutside.width - btnGG.width
                 val height = svOutside.getChildAt(0).height - btnGG.height
-                val x = r.nextInt(width).toFloat()
-                val y = r.nextInt(height).toFloat()
+                if(!created){
+                    x = r.nextInt(width).toFloat()
+                    y = r.nextInt(height).toFloat()
+                }
                 Log.d("ggg", height.toString())
                 Log.d("ggg", width.toString())
                 btnGG.x = x
                 btnGG.y = y
                 btnGG.visibility = View.VISIBLE
-
+                created = true
             }
 
         }

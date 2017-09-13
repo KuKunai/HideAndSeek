@@ -53,10 +53,11 @@ class FirstFragment() : Fragment() {
         })
 
         svOutside.viewTreeObserver.addOnGlobalLayoutListener {
+
             if (svOutside != null && btnGG != null && !clicked) {
                 val width = svOutside.width - btnGG.width
                 val height = svOutside.getChildAt(0).height - btnGG.height
-                if(!created){
+                if (!created) {
                     x = r.nextInt(width).toFloat()
                     y = r.nextInt(height).toFloat()
                 }

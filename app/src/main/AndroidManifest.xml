@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.minipg.knot.kotlin_feed.activity.FeedActivity">
+
+        </activity>
+        <activity android:name="com.minipg.knot.kotlin_feed.activity.GradeActivity">
+
+        </activity>
     </application>
 
 </manifest>

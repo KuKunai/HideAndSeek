@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         tabs.getTabAt(0)?.text = "First"
         tabs.getTabAt(1)?.text = "Second"
         tabs.getTabAt(2)?.text = "Third"
+        tabs.getTabAt(3)?.text = "Feed"
 
     }
 }

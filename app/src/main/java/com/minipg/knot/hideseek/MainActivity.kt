@@ -1,10 +1,12 @@
 package com.minipg.knot.hideseek
 
 import android.app.Fragment
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.minipg.knot.hideseek.adapters.PageAdapter
 import com.minipg.knot.hideseek.fragment.FirstFragment
+import com.minipg.knot.kotlin_feed.activity.FeedActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +26,17 @@ class MainActivity : AppCompatActivity() {
         tabs.getTabAt(0)?.text = "First"
         tabs.getTabAt(1)?.text = "Second"
         tabs.getTabAt(2)?.text = "Third"
-        tabs.getTabAt(3)?.text = "Feed"
 
+        initinstance()
+    }
+
+    private fun initinstance(){
+        btnFeed.setOnClickListener {
+            val intent = Intent(
+                    this,
+                    FeedActivity::class.java
+            )
+            startActivity(intent)
+        }
     }
 }

@@ -18,12 +18,11 @@ class PageAdapter(fm: android.support.v4.app.FragmentManager, private val contex
             0 -> return FirstFragment()
             1 -> return SecondFragment()
             2 -> return ThirdFragment()
-            3 -> return FeedFragment()
         }
         return FirstFragment()
     }
 
     override fun getCount(): Int {
-        return 4
+        return 3
     }
 }

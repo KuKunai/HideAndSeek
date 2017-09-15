@@ -87,8 +87,8 @@ class FirstFragment() : Fragment() {
 
         dialog.button1.setOnClickListener { ob ->
             //            setAnimation()
-            val GG = AnimetionDialog(btnGG) //อนิเมชัน จาก class AnimetionDialog
-            GG.setAnimation()//อนิเมชัน จาก class AnimetionDialog
+            val anime = AnimetionDialog(btnGG) //อนิเมชัน จาก class AnimetionDialog
+            anime.setAnimation()//อนิเมชัน จาก class AnimetionDialog
             dialog.cancel()
         }
         dialog.show()

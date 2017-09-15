@@ -5,12 +5,16 @@
     android:background="#dddddd"
     android:orientation="vertical">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/svOutside"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:gravity="center"
+        android:overScrollMode="never">
 
         <RelativeLayout
+            android:id="@+id/rlInside"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -24,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/fanster_round_logo"
-                android:visibility="gone"/>
+                android:visibility="gone" />
         </RelativeLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

@@ -32,7 +32,7 @@ class FeedFragment : RxBaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return  inflater!!.inflate(R.layout.fragment_feed, container, false)
+        return container?.inflate(R.layout.fragment_feed)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -70,6 +70,7 @@ class FeedFragment : RxBaseFragment() {
     private fun initAdapter() {
         if (feedList.adapter == null) {
             feedList.adapter = FeedAdapter()
+
         }
     }
 
@@ -80,21 +81,23 @@ class FeedFragment : RxBaseFragment() {
             btnGG.visibility = View.GONE
             clicked = true
         })
-
-        feedList.viewTreeObserver.addOnGlobalLayoutListener {
+        svOutside.isFocusableInTouchMode = true
+        svOutside.viewTreeObserver.addOnGlobalLayoutListener {
+            feedList.layoutParams.height = svOutside.height
+            rlInside.layoutParams.height = feedList.getChildAt(0).height
             if (feedList != null && btnGG != null && !clicked) {
-                var width = feedList.width - btnGG.width
-                var height = feedList.height - btnGG.height
-                if (!created) {
-                    x = r.nextInt(width).toFloat()
-                    y = r.nextInt(height).toFloat()
-                }
-                Log.d("ggg", height.toString())
-                Log.d("ggg", width.toString())
+                var width = svOutside.width - btnGG.width
+                var height = svOutside.getChildAt(0).height - btnGG.height
+//                if (!created) {
+                x = r.nextInt(width).toFloat()
+                y = r.nextInt(height).toFloat()
+//                }
+                Log.d("ggg", "height " + feedList.measuredHeight.toString())
+                Log.d("ggg", "width " + width.toString())
                 btnGG.x = x
                 btnGG.y = y
                 btnGG.visibility = View.VISIBLE
-                created = true
+                //created = true
             }
 
         }

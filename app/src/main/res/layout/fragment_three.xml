@@ -3,10 +3,33 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFECB3">
+    <ScrollView
+        android:id="@+id/svOutside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/t3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="gg"/>
+        <RelativeLayout
+            android:id="@+id/rlContrainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/svInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" />
+            </ScrollView>
+
+            <ImageView
+                android:id="@+id/btnGG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fanster_round_logo"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+    </ScrollView>
 </LinearLayout>

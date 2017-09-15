@@ -74,41 +74,36 @@ class FirstFragment() : Fragment() {
 
     }
 
-//    private fun setAnimation() {
-//        val ran1 = (Math.random() * 100).toInt() + 0
-//        val animSet1 = AnimatorSet()
-//
-//        val animX1 = ObjectAnimator.ofFloat(btnGG, View.SCALE_X, 3f)
-//        val animY1 = ObjectAnimator.ofFloat(btnGG, View.SCALE_Y, 3f)
-//        animSet1.playTogether(animX1, animY1)
-//
-//        val animSet2 = AnimatorSet()
-//        val animX2 = ObjectAnimator.ofFloat(btnGG, View.SCALE_X, 1f)
-//        val animY2 = ObjectAnimator.ofFloat(btnGG, View.SCALE_Y, 1f)
-//        animSet2.playTogether(animX2, animY2)
-//
-//        val animSet3 = AnimatorSet()
-//        val animX3 = ObjectAnimator.ofFloat(btnGG, View.SCALE_X, 0f)
-//        val animY3 = ObjectAnimator.ofFloat(btnGG, View.SCALE_Y, 0f)
-//        animSet3.playTogether(animX3, animY3)
-//
-//        val animSet = AnimatorSet()
-//        animSet.playSequentially(animSet1, animSet2, animSet3)
-//        animSet.duration = 500
-//        animSet.start()
-//    }
+    private fun setAnimation() {
+        val ran1 = (Math.random() * 100).toInt() + 0
+        val animSet1 = AnimatorSet()
 
-    fun custom_dialog() {
+        val animX1 = ObjectAnimator.ofFloat(btnGG, View.SCALE_X, 2f)
+        val animY1 = ObjectAnimator.ofFloat(btnGG, View.SCALE_Y, 2f)
+        animSet1.playTogether(animX1, animY1)
+
+        val animSet3 = AnimatorSet()
+        val animX3 = ObjectAnimator.ofFloat(btnGG, View.SCALE_X, 0f)
+        val animY3 = ObjectAnimator.ofFloat(btnGG, View.SCALE_Y, 0f)
+        animSet3.playTogether(animX3, animY3)
+
+        val animSet = AnimatorSet()
+        animSet.playSequentially(animSet1, animSet3)
+        animSet.duration = 300
+        animSet.start()
+    }
+
+    private fun custom_dialog() {
 
         val dialog = Dialog(context)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.customdialog)
         dialog.setCancelable(true)
-        dialog.textView1.setText("หาเราเจอได้ไง!")
-        dialog.textView2.setText("ได้รับ ♥ 1 ดวง")
+        dialog.textView1.text = "หาเราเจอได้ไง!"
+        dialog.textView2.text = "ได้รับ ♥ 1 ดวง"
 
         dialog.button1.setOnClickListener { ob ->
-            //setAnimation()
+            setAnimation()
             dialog.cancel()
         }
         dialog.show()

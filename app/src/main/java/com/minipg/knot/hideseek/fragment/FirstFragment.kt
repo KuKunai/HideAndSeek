@@ -104,8 +104,8 @@ class FirstFragment() : Fragment() {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.customdialog)
         dialog.setCancelable(true)
-        dialog.textView1.setText("หาเราเจอได้ไง!")
-        dialog.textView2.setText("ได้รับ ♥ 1 ดวง")
+        dialog.textView1.text = "หาเราเจอได้ไง!"
+        dialog.textView2.text = "ได้รับ ♥ 1 ดวง"
 
         dialog.button1.setOnClickListener { ob ->
             //setAnimation()

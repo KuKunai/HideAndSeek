@@ -9,7 +9,7 @@ import android.widget.ImageView
 /**
  * Created by User on 15/9/2560.
  */
-class LoveManagement(btnGG: ImageView) : AppCompatActivity() {
+class AnimetionDialog(btnGG: ImageView) : AppCompatActivity() {
     val btnGG: ImageView = btnGG
     fun setAnimation() {
 

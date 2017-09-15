@@ -10,7 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import com.minipg.knot.hideseek.LoveManagement
+import com.minipg.knot.hideseek.AnimetionDialog
 import com.minipg.knot.hideseek.R
 import kotlinx.android.synthetic.main.customdialog.*
 import kotlinx.android.synthetic.main.fragment_one.*
@@ -87,8 +87,8 @@ class FirstFragment() : Fragment() {
 
         dialog.button1.setOnClickListener { ob ->
             //            setAnimation()
-            val GG = LoveManagement(btnGG) //อนิเมชัน จาก class LoveManagement
-            GG.setAnimation()//อนิเมชัน จาก class LoveManagement
+            val GG = AnimetionDialog(btnGG) //อนิเมชัน จาก class AnimetionDialog
+            GG.setAnimation()//อนิเมชัน จาก class AnimetionDialog
             dialog.cancel()
         }
         dialog.show()

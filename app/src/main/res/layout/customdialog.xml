@@ -3,7 +3,8 @@
     xmlns:fancy="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#3ee3f2">
+    android:background="@android:color/transparent">
+
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -23,13 +24,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/fanster_round_logo" />
+                android:src="@drawable/fanster_dialog" />
 
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
                 android:text="TextView"
                 android:textColor="#ffffff"
                 android:textSize="25dp"

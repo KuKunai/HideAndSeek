@@ -52,25 +52,25 @@ class FirstFragment() : Fragment() {
             clicked = true
         })
 
-        svOutside.viewTreeObserver.addOnGlobalLayoutListener {
-
-            if (svOutside != null && btnGG != null && !clicked) {
-                val width = svOutside.width - btnGG.width
-                val height = svOutside.getChildAt(0).height - btnGG.height
-                if (!created) {
-                    x = r.nextInt(width).toFloat()
-                    y = r.nextInt(height).toFloat()
-                }
-                Log.d("ggg", height.toString())
-                Log.d("ggg", width.toString())
-                btnGG.x = x
-                btnGG.y = y
-                btnGG.visibility = View.VISIBLE
-                created = true
-
-            }
-
-        }
+//        svOutside.viewTreeObserver.addOnGlobalLayoutListener {
+//
+//            if (svOutside != null && btnGG != null && !clicked) {
+//                val width = svOutside.width - btnGG.width
+//                val height = svOutside.getChildAt(0).height - btnGG.height
+//                if (!created) {
+//                    x = r.nextInt(width).toFloat()
+//                    y = r.nextInt(height).toFloat()
+//                }
+//                Log.d("ggg", height.toString())
+//                Log.d("ggg", width.toString())
+//                btnGG.x = x
+//                btnGG.y = y
+//                btnGG.visibility = View.VISIBLE
+//                created = true
+//
+//            }
+//
+//        }
 
     }
 

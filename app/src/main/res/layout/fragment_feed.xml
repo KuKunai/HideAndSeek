@@ -9,19 +9,18 @@
         android:id="@+id/svOutside"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:gravity="center"
-        android:overScrollMode="never">
+        android:fillViewport="true">
 
         <RelativeLayout
             android:id="@+id/rlInside"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/feedList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                />
 
             <ImageView
                 android:id="@+id/btnGG"

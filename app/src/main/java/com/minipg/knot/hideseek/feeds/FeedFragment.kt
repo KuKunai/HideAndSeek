@@ -3,9 +3,6 @@ package com.minipg.knot.kotlin_feed.features.feeds
 import android.app.ActionBar
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.droidcba.kedditbysteps.features.news.adapter.FeedAdapter
 import com.minipg.kont.kotlin_feed.commons.extensions.inflate
 import kotlinx.android.synthetic.main.fragment_feed.*
@@ -13,7 +10,7 @@ import rx.schedulers.Schedulers
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.view.WindowManager
+import android.view.*
 import com.minipg.knot.hideseek.R
 import com.minipg.knot.kotlin_feed.common.RxBaseFragment
 import rx.android.schedulers.AndroidSchedulers
@@ -27,8 +24,8 @@ class FeedFragment : RxBaseFragment() {
     private val feedsManager by lazy { FeedsManager() }
     private var clicked = false
     private var created = false
-    private var x = 0F
-    private var y = 0F
+    private var i = 0F
+    private var j = 0F
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -48,6 +45,10 @@ class FeedFragment : RxBaseFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onStart() {
+        super.onStart()
         initinstance()
     }
 
@@ -81,27 +82,55 @@ class FeedFragment : RxBaseFragment() {
             btnGG.visibility = View.GONE
             clicked = true
         })
-        svOutside.isFocusableInTouchMode = true
-        svOutside.viewTreeObserver.addOnGlobalLayoutListener {
-            feedList.layoutParams.height = svOutside.height
-            rlInside.layoutParams.height = feedList.getChildAt(0).height
-            if (feedList != null && btnGG != null && !clicked) {
-                var width = svOutside.width - btnGG.width
-                var height = svOutside.getChildAt(0).height - btnGG.height
-//                if (!created) {
-                x = r.nextInt(width).toFloat()
-                y = r.nextInt(height).toFloat()
-//                }
-                Log.d("ggg", "height " + feedList.measuredHeight.toString())
-                Log.d("ggg", "width " + width.toString())
-                btnGG.x = x
-                btnGG.y = y
-                btnGG.visibility = View.VISIBLE
-                //created = true
-            }
 
+        feedList.waitForLayout {
+            var width = feedList.measuredWidth
+            var height = feedList.measuredHeight
+            i = r.nextInt(width - btnGG.measuredWidth).toFloat()
+            j = r.nextInt(height - btnGG.measuredHeight).toFloat()
+            btnGG.x = i
+            btnGG.y = j
+            Log.d("ggg", "height " + feedList.measuredWidth)
+            Log.d("ggg", "width " + feedList.measuredHeight)
+            btnGG.visibility = View.VISIBLE
+        }
+        feedList.waitForLayout {
+           feedList.layoutParams.height = 6024
         }
 
+
+//        svOutside.isFocusableInTouchMode = true
+//        svOutside.viewTreeObserver.addOnGlobalLayoutListener {
+//            //            feedList.layoutParams.height = svOutside.height
+////            rlInside.layoutParams.height = feedList.getChildAt(0).height
+//            if (feedList != null && btnGG != null && !clicked) {
+//                var width = svOutside.width - btnGG.width
+//                var height = svOutside.getChildAt(0).height - btnGG.height
+//                if (!created) {
+//                    x = r.nextInt(width).toFloat()
+//                    y = r.nextInt(height).toFloat()
+//                    svOutside.viewTreeObserver.removeOnGlobalLayoutListener(this)
+//                }
+//                Log.d("ggg", "height " + feedList.measuredHeight.toString())
+//                Log.d("ggg", "width " + width.toString())
+//                btnGG.x = x
+//                btnGG.y = y
+//                btnGG.visibility = View.VISIBLE
+//                //created = true
+//            }
+//        }
+
+    }
+
+    private inline fun <T : View> T.waitForLayout(crossinline f: T.() -> Unit) {
+        viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                if (measuredWidth > 0 && measuredHeight > 0) {
+                    f()
+                    viewTreeObserver.removeOnGlobalLayoutListener(this)
+                }
+            }
+        })
     }
 }
 

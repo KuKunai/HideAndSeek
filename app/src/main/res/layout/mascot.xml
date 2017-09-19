@@ -4,4 +4,5 @@
     android:id="@+id/btnGG_One"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:src="@drawable/fanster_round_logo" />
+    android:src="@drawable/fanster_round_logo"
+    android:visibility="gone"/>

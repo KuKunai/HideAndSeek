@@ -24,6 +24,8 @@ class AnimetionDialog(btnGG: ImageView, context: Context, svOutside: NestedScrol
     private var x = 0F
     private var y = 0F
 
+    var sharedPrefUtil: SharedPrefUtil? = null
+
     val btnGG: ImageView = btnGG
     val context: Context = context
     val svOutside: NestedScrollView = svOutside

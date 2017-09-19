@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BBDEFB">
-    <ScrollView
+    android:background="#BBDEFB"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/svOutside"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,19 +19,21 @@
                 android:id="@+id/svInside"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" />
             </ScrollView>
 
-            <ImageView
-                android:id="@+id/btnGG"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/fanster_round_logo"
-                android:visibility="gone"/>
+            <include layout="@layout/mascot" />
+            <!--<ImageView-->
+            <!--android:id="@+id/btnGG_One"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/fanster_round_logo"-->
+            <!--android:visibility="gone" />-->
         </RelativeLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

@@ -1,19 +1,14 @@
 package com.minipg.knot.hideseek.fragment
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
-import android.app.Dialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
+import com.minipg.knot.hideseek.AnimetionDialog
 import com.minipg.knot.hideseek.R
-import kotlinx.android.synthetic.main.customdialog.*
 import kotlinx.android.synthetic.main.fragment_one.*
-import java.util.*
+import kotlinx.android.synthetic.main.mascot.*
 
 /**
  * Created by Knot on 9/8/2017.
@@ -31,7 +26,8 @@ class FirstFragment() : Fragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initinstance()
+        val GG = AnimetionDialog(btnGG_One, context, svOutside)
+        GG.initinstance()
     }
 
     override fun onStart() {
@@ -43,14 +39,14 @@ class FirstFragment() : Fragment() {
     }
 
 
-    private fun initinstance() {
-        var r = Random()
-
-        btnGG.setOnClickListener({
-            custom_dialog()
-//            btnGG.visibility = View.GONE
-            clicked = true
-        })
+//    private fun initinstance() {
+//        var r = Random()
+//
+//        btnGG.setOnClickListener({
+//            custom_dialog()
+////            btnGG.visibility = View.GONE
+//            clicked = true
+//        })
 
 //        svOutside.viewTreeObserver.addOnGlobalLayoutListener {
 //
@@ -72,7 +68,6 @@ class FirstFragment() : Fragment() {
 //
 //        }
 
-    }
 
 //    private fun setAnimation() {
 //        val ran1 = (Math.random() * 100).toInt() + 0
@@ -98,21 +93,21 @@ class FirstFragment() : Fragment() {
 //        animSet.start()
 //    }
 
-    fun custom_dialog() {
-
-        val dialog = Dialog(context)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.customdialog)
-        dialog.setCancelable(true)
-        dialog.textView1.text = "หาเราเจอได้ไง!"
-        dialog.textView2.text = "ได้รับ ♥ 1 ดวง"
-
-        dialog.button1.setOnClickListener { ob ->
-            //setAnimation()
-            dialog.cancel()
-        }
-        dialog.show()
-    }
+//    fun custom_dialog() {
+//
+//        val dialog = Dialog(context)
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+//        dialog.setContentView(R.layout.customdialog)
+//        dialog.setCancelable(true)
+//        dialog.textView1.text = "หาเราเจอได้ไง!"
+//        dialog.textView2.text = "ได้รับ ♥ 1 ดวง"
+//
+//        dialog.button1.setOnClickListener { ob ->
+//            //setAnimation()
+//            dialog.cancel()
+//        }
+//        dialog.show()
+//    }
 
 
 //    private fun setRandomFragment() {
@@ -125,4 +120,5 @@ class FirstFragment() : Fragment() {
 //        }
 //
 //    }
+
 }

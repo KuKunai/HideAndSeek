@@ -1,19 +1,20 @@
 package com.minipg.knot.kotlin_feed.features.feeds
 
-import android.app.ActionBar
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import com.droidcba.kedditbysteps.features.news.adapter.FeedAdapter
-import com.minipg.kont.kotlin_feed.commons.extensions.inflate
-import kotlinx.android.synthetic.main.fragment_feed.*
-import rx.schedulers.Schedulers
 import android.support.design.widget.Snackbar
-import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewTreeObserver
+import com.droidcba.kedditbysteps.features.news.adapter.FeedAdapter
 import com.minipg.knot.hideseek.R
 import com.minipg.knot.kotlin_feed.common.RxBaseFragment
+import com.minipg.kont.kotlin_feed.commons.extensions.inflate
+import kotlinx.android.synthetic.main.fragment_feed.*
 import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
 import java.util.*
 
 /**
@@ -95,7 +96,7 @@ class FeedFragment : RxBaseFragment() {
             btnGG.visibility = View.VISIBLE
         }
         feedList.waitForLayout {
-           feedList.layoutParams.height = 6024
+            feedList.layoutParams.height = 6024
         }
 
 
@@ -133,4 +134,3 @@ class FeedFragment : RxBaseFragment() {
         })
     }
 }
-

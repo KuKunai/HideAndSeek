@@ -24,14 +24,6 @@ class Main2Activity : AppCompatActivity() {
 
         prefs = this.getSharedPreferences(PREFS_FILENAME, 0)
 
-//        tv_score.text = "ยังไม่ได้ส่งค่า"
-
-//       test.setOnClickListener {
-//           prefs2 = this.getSharedPreferences(PREFS_FILENAME2, 0)
-//            val editor = prefs2!!.edit()
-//            editor.putString(GO_FRAGMENT2, "1500")
-//            editor.apply()
-//        }
         refresh.setOnClickListener {
             val i = Intent(application, Main2Activity::class.java)
             startActivity(i)

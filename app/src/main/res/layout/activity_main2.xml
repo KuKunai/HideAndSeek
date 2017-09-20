@@ -32,38 +32,47 @@
                     android:text="คะแนนที่ได้"
                     android:textSize="30sp" />
             </LinearLayout>
+
             <Button
                 android:id="@+id/refresh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Refresh" />
-            <Button
-                android:id="@+id/fragment1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="one"
-                tools:ignore="OnClick" />
 
-            <Button
-                android:id="@+id/fragment2"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="two"
-                tools:ignore="OnClick" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/fragment3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="three"
-                tools:ignore="OnClick" />
+                <Button
+                    android:id="@+id/fragment1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="one"
+                    tools:ignore="OnClick" />
 
-            <Button
-                android:id="@+id/fragment4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="feed"
-                tools:ignore="OnClick" />
+                <Button
+                    android:id="@+id/fragment2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="two"
+                    tools:ignore="OnClick" />
+
+                <Button
+                    android:id="@+id/fragment3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="three"
+                    tools:ignore="OnClick" />
+
+                <Button
+                    android:id="@+id/fragment4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="feed"
+                    tools:ignore="OnClick" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/fab"

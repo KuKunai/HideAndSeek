@@ -1,5 +1,6 @@
 package com.minipg.knot.kotlin_feed.features.feeds
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
@@ -8,7 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
+import android.widget.Toast
 import com.droidcba.kedditbysteps.features.news.adapter.FeedAdapter
+import com.minipg.knot.hideseek.AnimetionDialog
 import com.minipg.knot.hideseek.R
 import com.minipg.knot.kotlin_feed.common.RxBaseFragment
 import com.minipg.kont.kotlin_feed.commons.extensions.inflate
@@ -28,6 +31,10 @@ class FeedFragment : RxBaseFragment() {
     private var i = 0F
     private var j = 0F
 
+    val PREFS_FILENAME = "plengslowtoad"
+    val GO_FRAGMENT = "goFragment"
+    var prefs: SharedPreferences? = null
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return container?.inflate(R.layout.fragment_feed)
@@ -46,11 +53,20 @@ class FeedFragment : RxBaseFragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        prefs = activity.getSharedPreferences(PREFS_FILENAME, 0)
+        val fragShow = prefs!!.getString(GO_FRAGMENT, "defaultValue")
+        if (fragShow.equals("4")) {
+            val GG = AnimetionDialog(btnGG, context, svOutside)
+            GG.initinstance()
+        } else {
+
+            Toast.makeText(activity, fragShow, Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onStart() {
         super.onStart()
-        initinstance()
+//        initinstance()
     }
 
     private fun requestFeed() {

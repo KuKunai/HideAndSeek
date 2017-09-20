@@ -5,36 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.minipg.knot.hideseek.Main2Activity">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/fragment1"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="one"
-            tools:ignore="OnClick" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/fragment2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="two"
-            tools:ignore="OnClick" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/fragment3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="three"
-            tools:ignore="OnClick" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ♥ ที่ได้ :  "
+                    android:textSize="30sp" />
 
-        <Button
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go >>" />
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="คะแนนที่ได้"
+                    android:textSize="30sp" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Refresh" />
+            <Button
+                android:id="@+id/fragment1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="one"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/fragment2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="two"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/fragment3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="three"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/fragment4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="feed"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go >>" />
+        </LinearLayout>
+
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

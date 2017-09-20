@@ -28,7 +28,7 @@ class SecondFragment() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         prefs = activity.getSharedPreferences(PREFS_FILENAME, 0)
         val fragShow = prefs!!.getString(GO_FRAGMENT,"defaultValue")
-        if(fragShow.equals("f2")){
+        if(fragShow.equals("2")){
             val GG = AnimetionDialog(btnGG_One, context, svOutside)
             GG.initinstance()
         }

@@ -4,6 +4,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.app.Dialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.support.v4.widget.NestedScrollView
@@ -24,7 +25,11 @@ class AnimetionDialog(btnGG: ImageView, context: Context, svOutside: NestedScrol
     private var x = 0F
     private var y = 0F
 
-    var sharedPrefUtil: SharedPrefUtil? = null
+    ////////////////////////ใช้เก็บคะแนน เมื่อกด mascot
+    val PREFS_FILENAME2 = "plengslowtoad2"
+    val GO_FRAGMENT2 = "goFragment2"
+    var prefs2: SharedPreferences? = null
+    /////////////////////////
 
     val btnGG: ImageView = btnGG
     val context: Context = context
@@ -58,11 +63,18 @@ class AnimetionDialog(btnGG: ImageView, context: Context, svOutside: NestedScrol
         var r = Random()
 
         btnGG.setOnClickListener({
+            ////////////////กดแล้วว ทำให้ได้คะแนน
+            prefs2 = context.getSharedPreferences(PREFS_FILENAME2, 0)
+            val editor = prefs2!!.edit()
+            val putGG = prefs2!!.getInt(GO_FRAGMENT2,0)
+            editor.putInt(GO_FRAGMENT2,1+putGG)
+            editor.apply()
+
+            ////////กดแล้ว โชว์ Dialog
             custom_dialog()
 //            btnGG.visibility = View.GONE
             clicked = true
         })
-        btnGG.visibility = View.VISIBLE
 
         svOutside.viewTreeObserver.addOnGlobalLayoutListener {
             if (svOutside != null && btnGG != null && !clicked) {

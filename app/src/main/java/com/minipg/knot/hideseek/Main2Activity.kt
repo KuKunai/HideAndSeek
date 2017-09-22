@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main2.*
+import java.util.*
 
 
 class Main2Activity : AppCompatActivity() {
@@ -51,13 +52,20 @@ class Main2Activity : AppCompatActivity() {
             editor.putString(GO_FRAGMENT, "4")
             editor.apply()
         }
+        randomFrag.setOnClickListener {
+            val rand = Random()
+            val numberrandom = rand.nextInt(4) + 1
+            val editor = prefs!!.edit()
+            editor.putString(GO_FRAGMENT, numberrandom.toString())
+            editor.apply()
+        }
         fab.setOnClickListener { view ->
             val i = Intent(application, MainActivity::class.java)
             startActivity(i)
         }
 
         prefs2 = this.getSharedPreferences(PREFS_FILENAME2, 0)
-        val fragShow2 = prefs2!!.getInt(GO_FRAGMENT2,0)
+        val fragShow2 = prefs2!!.getInt(GO_FRAGMENT2, 0)
 //            Toast.makeText(this, fragShow2, Toast.LENGTH_SHORT).show()
         tv_score.text = fragShow2.toString()
     }

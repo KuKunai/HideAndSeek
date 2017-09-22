@@ -37,6 +37,7 @@
                 android:id="@+id/refresh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#99CCFF	"
                 android:text="Refresh" />
 
             <LinearLayout
@@ -72,12 +73,19 @@
                     android:text="feed"
                     tools:ignore="OnClick" />
 
-            </LinearLayout>
 
+            </LinearLayout>
+            <Button
+                android:id="@+id/randomFrag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Random"
+                tools:ignore="OnClick" />
             <Button
                 android:id="@+id/fab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#FF6666"
                 android:text="Go >>" />
         </LinearLayout>
 

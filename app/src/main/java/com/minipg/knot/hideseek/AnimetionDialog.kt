@@ -29,6 +29,9 @@ class AnimetionDialog(btnGG: ImageView, context: Context, svOutside: NestedScrol
     val PREFS_FILENAME2 = "plengslowtoad2"
     val GO_FRAGMENT2 = "goFragment2"
     var prefs2: SharedPreferences? = null
+    /////////////////////////Random คะแนน เมื่อกดเจอ Mascot
+    val rand = Random()
+    val ScoreRandom = rand.nextInt(4) + 1
     /////////////////////////
 
     val btnGG: ImageView = btnGG
@@ -67,7 +70,7 @@ class AnimetionDialog(btnGG: ImageView, context: Context, svOutside: NestedScrol
             prefs2 = context.getSharedPreferences(PREFS_FILENAME2, 0)
             val editor = prefs2!!.edit()
             val putGG = prefs2!!.getInt(GO_FRAGMENT2,0)
-            editor.putInt(GO_FRAGMENT2,1+putGG)
+            editor.putInt(GO_FRAGMENT2,ScoreRandom+putGG)
             editor.apply()
 
             ////////กดแล้ว โชว์ Dialog
@@ -105,7 +108,7 @@ class AnimetionDialog(btnGG: ImageView, context: Context, svOutside: NestedScrol
         dialog.setContentView(R.layout.customdialog)
         dialog.setCancelable(true)
         dialog.textView1.text = "หาเราเจอได้ไง!"
-        dialog.textView2.text = "ได้รับ ♥ 1 ดวง"
+        dialog.textView2.text ="ได้รับ ♥ " + ScoreRandom.toString() + " ดวง"
 
         dialog.button1.setOnClickListener { ob ->
             setAnimation()

@@ -26,6 +26,7 @@ class FirstFragment() : Fragment() {
     val GO_FRAGMENT = "goFragment"
     var prefs: SharedPreferences? = null
 
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_one, container, false)
     }
